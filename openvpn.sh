@@ -37,7 +37,7 @@ else
 	fi
 }
 function initialCheck () {
-	if ! rootbako; then
+	if ! rootako; then
 		echo "Sorry, you need to run this as root"
 		exit 1
 	fi
