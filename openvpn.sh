@@ -327,5 +327,6 @@ echo 'permit-access 0.0.0.0/0 $IP' >> /etc/privoxy/config
 service privoxy restart
 service privoxy status
 	exit 0
+	fi
 }
 initialCheck
