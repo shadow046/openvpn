@@ -159,11 +159,11 @@ function installOpenVPN () {
 		apt-get -y install ca-certificates gnupg
 		apt-get install -y openvpn iptables openssl wget ca-certificates curl
 	local version="3.0.4"
-	wget https://github.com/OpenVPN/easy-rsa/releases/download/v${version}/EasyRSA-unix-v${version}.tgz
-	tar xzf ~/EasyRSA-unix-v${version}.tgz -C ~/
+	wget https://github.com/OpenVPN/easy-rsa/releases/download/v${version}/EasyRSA-${version}.tgz
+	tar xzf ~/EasyRSA-${version}.tgz -C ~/
 	mv ~/EasyRSA-v${version} /etc/openvpn/easy-rsa
 	chown -R root:root /etc/openvpn/easy-rsa/
-	rm -f ~/EasyRSA-unix-v${version}.tgz
+	rm -f ~/EasyRSA-${version}.tgz
 	cd /etc/openvpn/easy-rsa/
 	cp vars.example vars
 	cat addtovars >> vars
