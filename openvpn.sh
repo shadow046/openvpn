@@ -168,12 +168,12 @@ function installOpenVPN () {
 	cp vars.example vars
 	cat addtovars >> vars
 	./easyrsa init-pki
-	./easyrsa build-ca nopass
+	./easyrsa --batch build-ca nopass
 	cp pki/ca.crt /etc/openvpn/
-	./easyrsa gen-req server nopass
+	./easyrsa --batch gen-req server nopass
 	cp pki/private/server.key /etc/openvpn/
 	cp pki/reqs/server.req /etc/openvpn/
-	./easyrsa sign-req server server
+	./easyrsa --batch sign-req server server
 	cp pki/issued/server.crt /etc/openvpn/
 	./easyrsa gen-dh
 	cp pki/dh.pem /etc/openvpn
@@ -285,7 +285,7 @@ echo '</ca>' >> /root/client.ovpn
 	
 # Privoxy
 apt-get update -y && apt-get upgrade -y && apt autoclean -y && apt autoremove
-apt-get install privoxy
+apt-get -y install privoxy
 echo 'user-manual /usr/share/doc/privoxy/user-manual' > /etc/privoxy/config
 echo 'confdir /etc/privoxy' >> /etc/privoxy/config
 echo 'logdir /var/log/privoxy' >> /etc/privoxy/config
