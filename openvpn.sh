@@ -135,19 +135,6 @@ function installQuestions () {
 		;;
 	esac
 	echo ""
-	echo ""
-	echo "Enter your dns or Press ENTER to use default:"
-	echo ""
-	until [[ "$DNS1" =~ ^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$ ]]; do
-		read -rp "Primary DNS: " -e 8.8.8.8 DNS1
-	done
-	until [[ "$DNS2" =~ ^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$ ]]; do
-		read -rp "Secondary DNS (optional): " -e 8.8.4.4 DNS2
-		if [[ "$DNS2" == "" ]]; then
-			break
-		fi
-	done
-	echo ""
 	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now."
 	echo "You will be able to generate a client at the end of the installation."
 	APPROVE_INSTALL=${APPROVE_INSTALL:-n}
@@ -162,7 +149,6 @@ function installOpenVPN () {
 		APPROVE_IP=${APPROVE_IP:-y}
 		PORT_CHOICE=${PORT_CHOICE:-1}
 		PROTOCOL_CHOICE=${PROTOCOL_CHOICE:-1}
-		DNS=${DNS:-1}
 		CONTINUE=${CONTINUE:-y}
 		PUBLIC_IPV4=$(curl ifconfig.co)
 		ENDPOINT=${ENDPOINT:-$PUBLIC_IPV4}
