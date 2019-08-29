@@ -117,7 +117,7 @@ function installQuestions () {
 	echo "   2) Custom"
 	echo "   3) Random [49152-65535]"
 	until [[ "$PORT_PRIVO" =~ ^[1-3]$ ]]; do
-		read -rp "Port choice [1-3]: " -e -i 1 $PORT_PRIVO
+		read -rp "Port choice [1-3]: " -e -i 1 PORT_PRIVO
 	done
 	case $PORT_PRIVO in
 		1)
