@@ -330,3 +330,4 @@ service privoxy status
 	fi
 }
 initialCheck
+installOpenVPN
