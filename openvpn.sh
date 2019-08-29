@@ -311,7 +311,7 @@ echo 'tolerate-pipelining 1' >> /etc/privoxy/config
 echo 'socket-timeout 300' >> /etc/privoxy/config
 echo 'permit-access 0.0.0.0/0'"$IP" >> /etc/privoxy/config
 service privoxy restart
-service privoxy status
+shutdown -r now
 	exit 0
 	fi
 }
