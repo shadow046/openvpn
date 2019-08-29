@@ -278,11 +278,9 @@ script-security 2
 cipher none
 auth none" >> /etc/openvpn/client.txt
 cp /etc/openvpn/client.txt /root/client.ovpn
-	{
-		echo '<ca>'
-		cat "/etc/openvpn/ca.crt"
-		echo '</ca>'
-} >> /root/client.ovpn
+echo '<ca>' >> /root/client.ovpn
+cat /etc/openvpn/ca.crt >> /root/client.ovpn
+echo '</ca>' >> /root/client.ovpn
 	echo 'The configuration file is available at /root/client.ovpn'
 	echo 'Download the .ovpn file and import it in your OpenVPN client.'
 	
