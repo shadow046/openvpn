@@ -303,7 +303,7 @@ cp /etc/openvpn/client.txt /root/client.ovpn
 # Privoxy
 apt-get update -y && apt-get upgrade -y && apt autoclean -y && apt autoremove
 apt-get install privoxy
-echo "user-manual /usr/share/doc/privoxy/user-manual" > /etc/privoxy/config
+echo 'user-manual /usr/share/doc/privoxy/user-manual' > /etc/privoxy/config
 echo 'confdir /etc/privoxy' >> /etc/privoxy/config
 echo 'logdir /var/log/privoxy' >> /etc/privoxy/config
 echo 'filterfile default.filter' >> /etc/privoxy/config
