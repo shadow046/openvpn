@@ -282,7 +282,7 @@ cp /etc/openvpn/client.txt /root/client.ovpn
 		echo '<ca>'
 		cat "/etc/openvpn/ca.crt"
 		echo '</ca>'
-} >> client.ovpn
+} >> /root/client.ovpn
 	echo 'The configuration file is available at /root/client.ovpn'
 	echo 'Download the .ovpn file and import it in your OpenVPN client.'
 	
