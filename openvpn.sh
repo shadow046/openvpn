@@ -155,7 +155,6 @@ function installOpenVPN () {
 	fi
 	installQuestions
 	NIC=$(ip -4 route ls | grep default | grep -Po '(?<=dev )(\S+)' | head -1)
-	if [[ "$OS" =~ (debian) ]]; then
 		apt-get update
 		apt-get -y install ca-certificates gnupg
 		apt-get install -y openvpn iptables openssl wget ca-certificates curl
@@ -311,7 +310,7 @@ echo 'permit-access 0.0.0.0/0'"$IP" >> /etc/privoxy/config
 service privoxy restart
 shutdown -r now
 	exit 0
-	fi
+
 }
 initialCheck
 installOpenVPN
