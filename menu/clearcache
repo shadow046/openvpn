@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo 3 > /proc/sys/vm/drop_caches
+clear
+echo -e ""
+echo -e ""
+echo -e " Cache cleared"
+echo -e ""
