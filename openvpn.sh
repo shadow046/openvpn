@@ -304,26 +304,26 @@ cp /etc/openvpn/client.txt /root/client.ovpn
 apt-get update -y && apt-get upgrade -y && apt autoclean -y && apt autoremove
 apt-get install privoxy
 echo "user-manual /usr/share/doc/privoxy/user-manual" > /etc/privoxy/config
-echo "confdir /etc/privoxy" >> /etc/privoxy/config
-echo "logdir /var/log/privoxy" >> /etc/privoxy/config
-echo "filterfile default.filter" >> /etc/privoxy/config
-echo "logfile logfile" >> /etc/privoxy/config
-echo "listen-address 0.0.0.0:$PORTS" >> /etc/privoxy/config
-echo "toggle 1" >> /etc/privoxy/config
-echo "enable-remote-toggle 0" >> /etc/privoxy/config
-echo "enable-remote-http-toggle 0" >> /etc/privoxy/config
-echo "enable-edit-actions 0" >> /etc/privoxy/config
-echo "enforce-blocks 0" >> /etc/privoxy/config
-echo "buffer-limit 4096" >> /etc/privoxy/config
-echo "enable-proxy-authentication-forwarding 1" >> /etc/privoxy/config
-echo "forwarded-connect-retries 1" >> /etc/privoxy/config
-echo "accept-intercepted-requests 1" >> /etc/privoxy/config
-echo "allow-cgi-request-crunching 1" >> /etc/privoxy/config
-echo "split-large-forms 0" >> /etc/privoxy/config
-echo "keep-alive-timeout 5" >> /etc/privoxy/config
-echo "tolerate-pipelining 1" >> /etc/privoxy/config
-echo "socket-timeout 300" >> /etc/privoxy/config
-echo "permit-access 0.0.0.0///0 $IP" >> /etc/privoxy/config
+echo 'confdir /etc/privoxy' >> /etc/privoxy/config
+echo 'logdir /var/log/privoxy' >> /etc/privoxy/config
+echo 'filterfile default.filter' >> /etc/privoxy/config
+echo 'logfile logfile' >> /etc/privoxy/config
+echo 'listen-address 0.0.0.0:$PORTS' >> /etc/privoxy/config
+echo 'toggle 1' >> /etc/privoxy/config
+echo 'enable-remote-toggle 0' >> /etc/privoxy/config
+echo 'enable-remote-http-toggle 0' >> /etc/privoxy/config
+echo 'enable-edit-actions 0' >> /etc/privoxy/config
+echo 'enforce-blocks 0' >> /etc/privoxy/config
+echo 'buffer-limit 4096' >> /etc/privoxy/config
+echo 'enable-proxy-authentication-forwarding 1' >> /etc/privoxy/config
+echo 'forwarded-connect-retries 1' >> /etc/privoxy/config
+echo 'accept-intercepted-requests 1' >> /etc/privoxy/config
+echo 'allow-cgi-request-crunching 1' >> /etc/privoxy/config
+echo 'split-large-forms 0' >> /etc/privoxy/config
+echo 'keep-alive-timeout 5' >> /etc/privoxy/config
+echo 'tolerate-pipelining 1' >> /etc/privoxy/config
+echo 'socket-timeout 300' >> /etc/privoxy/config
+echo 'permit-access 0.0.0.0/0 $IP' >> /etc/privoxy/config
 service privoxy restart
 service privoxy status
 	exit 0
