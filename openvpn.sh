@@ -313,6 +313,7 @@ echo 'socket-timeout 300' >> /etc/privoxy/config
 echo 'permit-access 0.0.0.0/0'"$IP" >> /etc/privoxy/config
 cd menu
 cp * /usr/local/sbin/
+chmod +x /usr/local/sbin/*
 service privoxy restart
 	exit 0
 
