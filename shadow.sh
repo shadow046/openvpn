@@ -1,5 +1,4 @@
 #!/bin/sh
-
 wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg|apt-key add -
 sleep 2
 echo "deb http://build.openvpn.net/debian/openvpn/release/2.4 stretch main" > /etc/apt/sources.list.d/openvpn-aptrepo.list
@@ -7,7 +6,6 @@ echo "deb http://build.openvpn.net/debian/openvpn/release/2.4 stretch main" > /e
 apt update
 apt upgrade -y
 apt install openvpn nginx php7.0-fpm stunnel4 squid3 dropbear easy-rsa unzip vnstat ufw build-essential fail2ban zip -y
-
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
@@ -15,14 +13,10 @@ MYIP=$(wget -qO- ipv4.icanhazip.com);
 MYIP2="s/sssssssss/$MYIP/g";
 cd ~/
 wget "https://raw.githubusercontent.com/radzvpn/TNTNOLOADDNS/master/plugin.tgz"
-
 # disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-
-
 # set time GMT +8
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
-
 # install webmin
 cd
 wget "https://raw.githubusercontent.com/radzvpn/TNTNOLOADDNS/master/webmin_1.801_all.deb"
@@ -462,7 +456,6 @@ cat > /home/panel/html/index.html <<-END
                 </ul>
             </div>
         </nav>
-
         <!--main section-->
         <section class="bg-texture hero" id="main">
             <div class="container">
@@ -483,7 +476,6 @@ cat > /home/panel/html/index.html <<-END
                 </div>
             </div>
         </section>
-
         <!--features-->
         <section class="bg-light" id="features">
             <div class="container">
@@ -577,7 +569,6 @@ cat > /home/panel/html/index.html <<-END
                 </div>
             </div>
         </section>
-
         <section class="bg-white p-0">
             <div class="container-fluid">
                 <div class="row d-md-flex mt-5">
@@ -602,7 +593,6 @@ cat > /home/panel/html/index.html <<-END
                 </div>
             </div>
         </section>
-
         <!--pricing-->
         <section class="bg-light" id="configs">
             <div class="container">
@@ -666,7 +656,6 @@ cat > /home/panel/html/index.html <<-END
                 </div>
             </div>
         </section>
-
         <!--download-->
         <section class="bg-orange pt-0" id="download">
             <div class="container">
